@@ -1,26 +1,26 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import React, { useState } from 'react'
 import axios from 'axios';
 
 function Signin() {
-    const navigate = useNavigate();
-    const [userData , setUserData] = useState({
-        name:"",
-        email:"",
-        password:"",
-        role:"Customer",
-    });
+  const navigate = useNavigate();
+  const [userData, setUserData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    role: "Customer",
+  });
 
-    const handleSignin = async (e) =>{
-        e.preventDefault();
-        try {
-            await axios.post("https://my-fsd-be-1-1.onrender.com/api/auth/register");
-            alert("Signin successful! Please login.");
-            navigate("/login");
-        } catch (error) {
-            alert("error signin user");
-        }
-    };
+  const handleSignin = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post("https://my-fsd-be-1-1.onrender.com/api/auth/register");
+      alert("Signin successful! Please login.");
+      navigate("/login");
+    } catch (error) {
+      alert("error signin user");
+    }
+  };
   return (
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100">
       <form
@@ -61,12 +61,9 @@ function Signin() {
 
         <p className="text-center text-sm text-gray-600 mt-4">
           Already have an account?{" "}
-          <a
-            href="/login"
-            className="text-blue-600 hover:underline font-medium"
-          >
+          <Link to="/login" className="text-blue-600 hover:underline font-medium">
             Login
-          </a>
+          </Link>
         </p>
       </form>
     </div>
