@@ -4,7 +4,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import { AuthContext } from './Context/AuthContext';
 import Home from './Pages/Home';
-import FoodDetails from './Pages/Fooddetails';
+import FoodDetails from './Pages/FoodDetails';
 import Login from './Pages/Login';
 import Signin from './Pages/Signin';
 import Cart from './Pages/Cart';
